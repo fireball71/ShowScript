@@ -95,6 +95,7 @@ public class Main extends JavaPlugin implements Listener {
     cloudAnnotationParser.parse(commandHandler);
 
     getRealDataFolder().mkdir();
+    fs.mkdirs();
     timecodeExecutor = new TimecodeShowExecutor(this);
 
     // start RegionListener if WorldGuard is present
