@@ -12,7 +12,7 @@ Join the ShowScript Discord server for help & support: https://discord.gg/yNX8Qd
 
 ## Compatibility
 
-Build and run ShowScript with Java 25 or newer. The plugin is compiled against Paper 26.3. WorldGuard region shows require compatible WorldEdit 7 and WorldGuard 7 plugins; these remain optional.
+Build and run ShowScript with Java 25 or newer. The plugin is compiled against Paper 26.3 and bundles Groovy 4.0.33 for Groovy DSL execution and Java 25 compatibility. WorldGuard region shows require compatible WorldEdit 7 and WorldGuard 7 plugins; these remain optional.
 
 The legacy `fountain` action fields `id` and `damage` are no longer supported. Replace them with a Bukkit block data string, for example:
 
