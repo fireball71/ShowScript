@@ -126,8 +126,11 @@ public abstract class ShowActionExecutor {
 
     protected void fountain(Location loc, String blockDataString, Vector velocity, int time) {
         int finalWait = (int) (Lag.getTPS() / 10) * (time);
+        if (blockDataString == null) {
+            throw new IllegalArgumentException("Block data cannot be null");
+        }
+        BlockData blockData = Bukkit.createBlockData(blockDataString);
         int taskId = Bukkit.getScheduler().runTaskTimer(scheduler.getPlugin(), () -> {
-            BlockData blockData = Bukkit.createBlockData(blockDataString);
             FallingBlock fb = loc.getWorld().spawnFallingBlock(loc, blockData);
             fb.setDropItem(false);
             fb.setVelocity(velocity);
