@@ -96,6 +96,9 @@ public class Main extends JavaPlugin implements Listener {
 
     getRealDataFolder().mkdir();
     fs.mkdirs();
+    if (!fs.isDirectory()) {
+      throw new IllegalStateException("Shows path is not a directory: " + fs.getAbsolutePath());
+    }
     timecodeExecutor = new TimecodeShowExecutor(this);
 
     // start RegionListener if WorldGuard is present
